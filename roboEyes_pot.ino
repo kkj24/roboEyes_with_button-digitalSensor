@@ -54,12 +54,12 @@ void loop() {
   static int ekspresi = 0;
   static int react = 0;
 
-  if(kelembapan >= 50) ekspresi = 0;
   if(kelembapan >= 65) ekspresi = 1;
-  if(kelembapan <= 15) ekspresi = 2;
+  else if(kelembapan >= 50) ekspresi = 0;
+  else if(kelembapan <= 15) ekspresi = 2;
 
   if(keterangan <= 35) react = 0;
-  else if(keterangan >= 36) react = 1;
+  else if(keterangan >= 35) react = 1;
 
   if(persentase2 != keterangan) {
     Serial.print("Brightness:");
@@ -69,9 +69,9 @@ void loop() {
   if(persentase1 != kelembapan) {
     Serial.print("Kelembapan:");
     Serial.println(String(kelembapan) + "percent");
-    if(kelembapan >= 50) Serial.println("Ekspresi: Default");
-    if(kelembapan >= 65) Serial.println("Ekspresi: Happy");
-    if(kelembapan <= 25) Serial.println("Ekspresi: Angry");
+    if(kelembapan >= 65) Serial.println("Ekspresi: HAPPY");
+    else if(kelembapan >= 50) Serial.println("Ekspresi: DEFAULT");
+    else if(kelembapan <= 25) Serial.println("Ekspresi: Angry");
   }
 
   switch(ekspresi) {
