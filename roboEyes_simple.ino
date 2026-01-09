@@ -1,3 +1,9 @@
+/*
+Hi, my name is khemal, i'm is student and learner who want to be engineer and programer/developer
+you can follow my social media account @khemalkhantata with this link
+https://www.instagram.com/khemalkhantata/
+*/
+
 #include <Wire.h>
 #include <Adafruit_SSD1306.h>
 #include <Adafruit_GFX.h>
