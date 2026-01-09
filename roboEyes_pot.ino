@@ -36,8 +36,8 @@ void setup() {
   eyes.close();
   eyes.setCuriosity(true);
 
-  pinMode(moisture_sensor, INPUT_PULLDOWN);
-  pinMode(light_sensor, INPUT_PULLDOWN);
+  pinMode(moisture_sensor, INPUT);
+  pinMode(light_sensor, INPUT);
 
 }
 
