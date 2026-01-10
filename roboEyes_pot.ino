@@ -54,8 +54,8 @@ void loop() {
   static int ekspresi = 0;
   static int react = 0;
 
-  if(kelembapan >= 65) ekspresi = 1;
-  else if(kelembapan >= 50) ekspresi = 0;
+  if(kelembapan >= 65) ekspresi = 0;
+  else if(kelembapan >= 50) ekspresi = 1;
   else if(kelembapan <= 15) ekspresi = 2;
 
   if(keterangan <= 35) react = 0;
@@ -77,12 +77,12 @@ void loop() {
   switch(ekspresi) {
     case 0:
       eyes.open();
-      eyes.setMood(DEFAULT);
+      eyes.setMood(HAPPY);
       eyes.setAutoblinker(true);
     break;
 
     case 1:
-      eyes.setMood(HAPPY);
+      eyes.setMood(DEFAULT);
       eyes.setAutoblinker(true);
       eyes.setIdleMode(true);
     break;
@@ -109,6 +109,4 @@ void loop() {
 
   persentase1 = kelembapan;
   persentase2 = keterangan;
-
-  delay(1);
 }
